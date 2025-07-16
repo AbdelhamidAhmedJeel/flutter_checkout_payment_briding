@@ -55,6 +55,12 @@ dependencies{
     implementation("com.squareuo.retrofit2:retrofit:2.9.0")
     implementation("com.squareuo.retrofit2:converter-gson:2.9.0")
 
+    // Android dependencies
+    implementation("anroidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.12.0")
+
+
+
 
 
 
