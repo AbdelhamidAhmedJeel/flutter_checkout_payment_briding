@@ -5,9 +5,10 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+
 android {
     namespace = "com.example.flutter_checkout_payments_briding"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -24,8 +25,8 @@ android {
         applicationId = "com.example.flutter_checkout_payments_briding"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        minSdk = 24
+        targetSdk = 36
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
@@ -41,4 +42,13 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies{
+
+    // Required to initialize the CardManagementDesignSystem
+    implementation("androidx.compose.ui:ui:1.8.3")
+    implementation("com.checkout:checkout-sdk-card-management-android:2.0.0")
+
+
 }
