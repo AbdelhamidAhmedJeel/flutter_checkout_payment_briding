@@ -35,12 +35,17 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   late SharedPreferencesService mySharedPreferences;
   bool isLoading = true;
-  String stringTest = "Jeel Pay";
-  int intTest = 2025;
-  bool boolTest = true;
-  double doubleTest = 3.14;
-  List<String> stringListTest = ["Abdelhamid", "Ahmed"];
-  dynamic textToDisplay = 'Try Save Data With Shared Preferences';
+
+  String stringTest = "Jeel Pay App";
+  int intTest = 2026;
+  bool boolTest = false;
+
+
+  double doubleTest = 3.1489;
+
+  List<String> stringListTest = ["Abdo", "Ahmed", "Abdelhamid"];
+  dynamic textToDisplay =
+      'Try Save Data With Shared Preferences, please click on the buttons below to save data';
 
   @override
   void initState() {
