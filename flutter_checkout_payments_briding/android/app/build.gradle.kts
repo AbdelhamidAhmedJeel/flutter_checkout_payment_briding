@@ -59,7 +59,7 @@ dependencies{
     implementation("anroidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.12.0")
 
-    // Json proccessing
+    // Json processing
     implementation("com.google.code.gson:gson:2.13.1")
 
 
