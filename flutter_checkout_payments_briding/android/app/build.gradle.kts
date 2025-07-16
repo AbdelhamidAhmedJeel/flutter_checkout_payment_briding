@@ -50,5 +50,12 @@ dependencies{
     implementation("androidx.compose.ui:ui:1.8.3")
     implementation("com.checkout:checkout-sdk-card-management-android:2.0.0")
 
+    // api dependencies
+    implementation("com.squareup.okhttp3:okhttp:5.1.0")
+    implementation("com.squareuo.retrofit2:retrofit:2.9.0")
+    implementation("com.squareuo.retrofit2:converter-gson:2.9.0")
+
+
+
 
 }
