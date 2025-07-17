@@ -22,7 +22,12 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
-
+    kapt {
+        javacOptions {
+            option("-source", "11")
+            option("-target", "11")
+        }
+    }
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.flutter_checkout_payments_briding"
@@ -49,30 +54,29 @@ flutter {
 
 dependencies{
 
+
     // Required to initialize the CardManagementDesignSystem
     implementation("androidx.compose.ui:ui:1.8.3")
     implementation("com.checkout:checkout-sdk-card-management-android:2.0.0")
 
-    // api dependencies
-    implementation("com.squareup.okhttp3:okhttp:5.1.0")
-    implementation("com.squareuo.retrofit2:retrofit:2.9.0")
-    implementation("com.squareuo.retrofit2:converter-gson:2.9.0")
+    // Corrected Retrofit dependencies
+    implementation ("com.squareup.retrofit2:retrofit:3.0.0")
+    implementation ("com.squareup.retrofit2:converter-gson:3.0.0")
 
-    // Android dependencies
-    implementation("anroidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.12.0")
+    // Corrected AppCompat dependency
+    implementation ("androidx.appcompat:appcompat:1.7.1")
 
-    // Json processing
-    implementation("com.google.code.gson:gson:2.13.1")
-
+    // ... your Dagger dependencies and other dependencies
+    // Use your actual Dagger version
     implementation("com.google.dagger:dagger:2.57")
-    implementation("om.google.dagger:dagger-compiler:2.57")
-    implementation("om.google.dagger:dagger-android-processor:2.57")
+
+    kapt ("com.google.dagger:dagger-compiler:2.57") // Use your actual Dagger version
+    // If using Dagger Android
+    implementation ("com.google.dagger:dagger-android-support:2.57")
+    kapt ("com.google.dagger:dagger-android-processor:2.57")
 
 
 
-
-
-
+    implementation("androidx.multidex:multidex:2.0.1")
 
 }
