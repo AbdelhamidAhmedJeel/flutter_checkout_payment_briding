@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
         android:label="flutter_checkout_payments_briding"
-        android:name="${applicationName}"
+        android:name=".JeelApp"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
