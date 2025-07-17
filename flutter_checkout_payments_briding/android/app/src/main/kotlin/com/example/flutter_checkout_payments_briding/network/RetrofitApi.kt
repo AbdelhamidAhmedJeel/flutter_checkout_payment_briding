@@ -27,4 +27,11 @@ class RetrofitApi @Inject constructor(private var networkInterceptor: JeelNetwor
         }
         return retrofit
     }
+
+    @Provides
+    @Singleton
+    fun getPaymentsRequestInterface(): PaymentsRequestsInterface{
+        return getRetrofitApiSandbox()!!.create(PaymentsRequestsInterface::class.java)
+
+    }
 }
