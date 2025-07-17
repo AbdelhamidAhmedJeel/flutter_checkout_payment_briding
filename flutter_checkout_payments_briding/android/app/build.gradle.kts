@@ -54,7 +54,7 @@ flutter {
 
 dependencies{
 
-
+    implementation("com.checkout:checkout-sdk-3ds-android:3.2.6")
     // Required to initialize the CardManagementDesignSystem
     implementation("androidx.compose.ui:ui:1.8.3")
     implementation("com.checkout:checkout-sdk-card-management-android:2.0.0")
