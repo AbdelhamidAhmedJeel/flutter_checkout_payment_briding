@@ -3,6 +3,9 @@ plugins {
     id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
+
+    // hilt dependency injection
+    id("kotlin-kapt")
 }
 
 
@@ -61,6 +64,11 @@ dependencies{
 
     // Json processing
     implementation("com.google.code.gson:gson:2.13.1")
+
+    implementation("com.google.dagger:dagger:2.57")
+    implementation("om.google.dagger:dagger-compiler:2.57")
+    implementation("om.google.dagger:dagger-android-processor:2.57")
+
 
 
 
