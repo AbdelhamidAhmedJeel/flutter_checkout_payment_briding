@@ -13,6 +13,11 @@ class JeelApp : Application() {
         MultiDex.install(this)
     }
 
+    override fun onCreate() {
+        super.onCreate()
+        initializeAppComponent()
+    }
+
     private fun initializeAppComponent() {
         appComponent =
             DaggerAppComponent.builder().jeelApplicationModule(JeelApplicationModule(this))
