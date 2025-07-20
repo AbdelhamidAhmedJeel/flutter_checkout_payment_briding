@@ -55,6 +55,7 @@ flutter {
 dependencies{
 
     implementation("com.checkout:checkout-sdk-3ds-android:3.2.6")
+    implementation("com.checkout:checkout-android-components:1.0.1")
     // Required to initialize the CardManagementDesignSystem
     implementation("androidx.compose.ui:ui:1.8.3")
     implementation("com.checkout:checkout-sdk-card-management-android:2.0.0")
@@ -74,6 +75,11 @@ dependencies{
     // If using Dagger Android
     implementation ("com.google.dagger:dagger-android-support:2.57")
     kapt ("com.google.dagger:dagger-android-processor:2.57")
+
+    //Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2")
 
 
 
