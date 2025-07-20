@@ -1,4 +1,4 @@
-package com.suecal.suecalcrmnewkmm.data.network
+package com.example.flutter_checkout_payments_briding.network
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -6,7 +6,8 @@ import android.net.Network
 import android.net.NetworkCapabilities
 
 import android.os.Build.*
-import com.example.flutter_checkout_payments_briding.utils.NetworkExceptions
+import android.util.Log
+import com.example.flutter_checkout_payments_briding.network.exceptions.NetworkExceptions
 
 import okhttp3.Interceptor
 import okhttp3.Response
@@ -14,28 +15,30 @@ import java.io.IOException
 import javax.inject.Inject
 
 
-class JeelNetworkInterceptor @Inject constructor(private  var ctx: Context):Interceptor{
-    override fun intercept(chain: Interceptor.Chain): Response {
+class JeelNetworkInterceptor @Inject constructor(private  var context: Context):Interceptor{
+ override fun intercept(chain: Interceptor.Chain): Response {
+    if (isNetworkConnected()) {
+        try {
+            val request = chain.request()
 
-        if ( isNetworkConnected()){
-            try {
-                return chain.proceed(chain.request())
-            }catch (e: IOException){
-                throw NetworkExceptions(e.message!!)
+            val response = chain.proceed(request)
+            
 
-            }
-
-        }else{
-            throw NetworkExceptions("No Internet Connection")
+            return response
+        } catch (e: IOException) {
+             throw NetworkExceptions(e.message ?: "Network error occurred")
+        } catch (e: Exception) {
+              throw e
         }
+    } else {
 
-
+        throw NetworkExceptions("No Internet Connection")
     }
-
+}
 
 
     private fun isNetworkConnected(): Boolean {
-        val cm = ctx.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         if (VERSION.SDK_INT < 23) {
             val ni = cm.activeNetworkInfo
             if (ni != null) {
