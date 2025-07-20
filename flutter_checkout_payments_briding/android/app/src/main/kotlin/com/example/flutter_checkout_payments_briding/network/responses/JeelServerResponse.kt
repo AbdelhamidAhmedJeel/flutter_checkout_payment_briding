@@ -1,6 +1,5 @@
-package com.example.flutter_checkout_payments_briding.utils
+package com.example.flutter_checkout_payments_briding.network.responses
 
-import android.os.Message
 import com.google.gson.annotations.SerializedName
 
 data  class JeelServerResponse(@SerializedName ("content") var responseData:Any? =null
