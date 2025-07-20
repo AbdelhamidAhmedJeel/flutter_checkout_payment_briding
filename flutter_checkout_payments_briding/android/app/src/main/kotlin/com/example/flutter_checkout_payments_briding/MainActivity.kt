@@ -9,16 +9,22 @@ import io.flutter.plugin.common.MethodChannel
 
 class MainActivity : FlutterActivity(){
     private val  channel = "com.example.flutter_checkout_payments_briding/checkout"
+    private lateinit var appComponent: AppComponent
+    private lateinit var checkoutPaymentHandler: CheckoutPaymentHandler
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
         MethodChannel(
             flutterEngine.dartExecutor.binaryMessenger,
             channel
         ).setMethodCallHandler { call, result ->
-            val  checkoutPaymentHandler = CheckoutPaymentHandler(this)
+            appComponent = (context.applicationContext as JeelApp).appComponent
+            appComponent.inject(this)
+            checkoutPaymentHandler = appComponent.getCheckoutPaymentHandler()
             checkoutPaymentHandler.handleMethodCall(call,result)
 
     }
         }
+
+
 
 }
