@@ -5,7 +5,7 @@ import com.example.flutter_checkout_payments_briding.models.request_parameters.B
 import com.example.flutter_checkout_payments_briding.models.request_parameters.Customer
 import com.example.flutter_checkout_payments_briding.models.request_parameters.PaymentSessionParams
 import com.example.flutter_checkout_payments_briding.repositories.JeelPaymentsRepository
-import com.example.flutter_checkout_payments_briding.utils.Coroutines
+
 import com.google.gson.Gson
 import io.flutter.Log
 import io.flutter.plugin.common.MethodCall
